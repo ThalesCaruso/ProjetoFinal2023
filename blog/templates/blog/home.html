@@ -1,21 +1,254 @@
 <!DOCTYPE html>
+{%load static %}
 <html lang="pt-br">
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta charset="UTF-8">
-    <title>Primeiro template</title>
+    <title>Página Inicial</title>
 </head>
 <body>
-    <h2>Lista de posts cadastrados</h2>
+    <div class="container-fluid bg-dark mb-2">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <header class="bg-dark my-2">
 
-    <ul>
-        {% for post in posts %}
-        <a href="{% url 'post_detail' post.id %}"> {{post.titulo}} - {{post.autor}} </a>
-        <br />
-        {% endfor %}
-    </ul>
 
-    {% load static %}
-    <img src="{% static 'blog/imagemteste.JPG' %}">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
+
+
+                        <div class="container-fluid">
+
+                            <a class="navbar-brand" href="#">Altha Perfomance</a>
+
+                            <button class="navbar-toggler"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#navbarSupportedContent"
+                                    aria-controls="navbarSupportedContent"
+                                    aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" aria-current="page" href="#">Blog</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Projetos</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link">Contato</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link">Login</a>
+                                    </li>
+                                </ul>
+                                <form class="d-flex" role="search">
+                                    <input class="form-control me-2"
+                                           type="search"
+                                           placeholder="Search"
+                                           aria-label="Search">
+
+                                    <button class="btn btn-outline-success" type="submit">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <div id="carouselExampleControls"
+                         class="carousel slide"
+                         data-bs-ride="carousel">
+
+                        <div class="carousel-inner">
+
+                            <div class="carousel-item active">
+                                <svg class="bd-placeholder-img"
+                                     width="100%"
+                                     height="100%"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     aria-hidden="true"
+                                     preserveAspectRatio="xMidYMid slice"
+                                     focusable="false">
+
+                                    <rect width="100%" height="100%" fill="#3A3276"/>
+
+                                </svg>
+
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Confira os lançamentos.</h5>
+                                    <p>Mais de 50 jogos lançaram esse mês, acompanhe os lançamentos.</p>
+                                </div>
+
+                            </div>
+                            <div class="carousel-item">
+                                                                <svg class="bd-placeholder-img"
+                                     width="100%"
+                                     height="100%"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     aria-hidden="true"
+                                     preserveAspectRatio="xMidYMid slice"
+                                     focusable="false">
+
+                                    <rect width="100%" height="100%" fill="#198754"/>
+
+                                </svg>
+
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Crie sua conta para poder acompanhar tudo através do seu e-mail.</h5>
+                                    <p>Faça login com sua rede social ou Gmail.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                                                <svg class="bd-placeholder-img"
+                                     width="100%"
+                                     height="100%"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     aria-hidden="true"
+                                     preserveAspectRatio="xMidYMid slice"
+                                     focusable="false">
+
+                                    <rect width="100%" height="100%" fill="#727376"/>
+
+                                </svg>
+
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Inscreva-se no nosso canal do Youtube.</h5>
+                                    <p>Conheça nosso canal no Youtube com análises, reviews e gameplay semanais.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev"
+                                type="button"
+                                data-bs-target="#carouselExampleControls"
+                                data-bs-slide="prev">
+
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next"
+                                type="button"
+                                data-bs-target="#carouselExampleControls"
+                                data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+
+                </header>
+            </div>
+
+    </div>
+</div>
+
+    <main class="bg-light">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-8">
+
+                    <div class="row">
+                        <div class="col-8 d-flex">
+
+                            <div class="card vh-75 vw-100">
+
+                                <img src="{% static 'blog/RESIDENTEVIL4.jpg' %}" class="card-img-top" alt="imagem card teste">
+
+                                <div class="card-body">
+                                    <h5 class="card-title">Resident Evil 4</h5>
+
+                                    <p class="card-text">Resident Evil 4, conhecido no Japão como Biohazard 4 (バイオハザード4 Baiohazādo Fō?), é um jogo eletrônico de survival horror e tiro em terceira pessoa desenvolvido e publicado pela Capcom, lançado originalmente para o GameCube em 2005. É o sexto jogo principal da franquia Resident Evil.</p>
+
+                                    <p class="card-text">
+                                        <small class="text-muted"> Publicado em 15/04/2023</small>
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-4 d-flex ">
+                            <div class="card vh-75 vw-100">
+                                <img src="{% static 'blog/goty.jpg' %}" class="card-img-top" alt="imagem votação">
+
+                                <div class="card-body">
+
+                                    <div class="form-check"></div>
+
+                                    <ul class="list-group list-group-flush">
+                                        {% for i in 'ABCDE'%}
+
+                                        <div class="list-group-item"><input class="form-check-input"
+                                                  type="radio"
+                                                  name="flexRadioDefault"
+                                                  id="flexRadioDefault1">
+                                            <label class="form-check-label"
+                                                   for="flexRadioDefault1">
+
+                                                Alternativa {{i}}
+
+                                            </label>
+                                        </div>
+
+                                        {% endfor %}
+
+                                    </ul>
+                                    <a href="#" class="btn btn-primary mt-2 d-grid">Responder</a>
+
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark py-4 my-2">
+        <div class="contrainer-fluid text-white">
+            <div class="row justify-content-center">
+
+                <div class="col-2 text-left">
+                    <h5 class="text-uppercase fw-bold text-info">Nosso objetivo</h5>
+                    <p>
+                        Concluir a cadeira final com êxito e ter um case para utilizar no portfólio
+                    </p>
+                </div>
+
+                <div class="col-4 text-left">
+                    <h5 class="text-uppercase fw-bold text-info">Quem somos?</h5>
+                    <p>
+                        Thales Caruso - Estudante de ADS 5º Semestre <br>Alexandre Malabarba - Estudante de ADS 5º Semestre
+                    </p>
+                </div>
+
+                <div class="col-2">
+                    <h5 class="text-uppercase fw-bold text-info">Nossas redes sociais</h5>
+                    <p>
+                        <i class="fa-brands fa-youtube"></i>
+                        <a href="#" class="text-white" style="text-decoration:none;">Youtube</a>
+                    </p>
+                    <p>
+                        <i class="fa-brands fa-github"></i>
+                        <a href="#" class="text-white" style="text-decoration:none;">GitHub</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
