@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'blog.apps.BlogConfig',
     'contato.apps.ContatoConfig',
     'cursos.apps.CursosConfig',
@@ -36,6 +37,14 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'contas.apps.ContasConfig',
     'widget_tweaks',
+    # Requerido allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.facebook',
+
 ]
 
 MIDDLEWARE = [
@@ -53,7 +62,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -64,6 +73,11 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 WSGI_APPLICATION = 'core.wsgi.application'
@@ -133,7 +147,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'staticfiles/'),
 ]
 
-
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'login'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -141,10 +156,13 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # google config
-EMAIL_BACKEND = str(os.getenv('EMAIL_BACKEND'))
-EMAIL_HOST = str(os.getenv('EMAIL_HOST'))
-EMAIL_HOST_USER = str(os.getenv('EMAIL_HOST_USER'))
-EMAIL_HOST_PASSWORD = str(os.getenv('EMAIL_HOST_PASSWORD'))
-EMAIL_PORT = str(os.getenv('EMAIL_PORT'))
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'carusothales@gmail.com'
+EMAIL_HOST_PASSWORD = 'dkuslcncuiufzyxq'
+EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = str(os.getenv('DEFAULT_FROM_EMAIL'))
+DEFAULT_FROM_EMAIL = 'default from email'
+
+
+SITE_ID = 1

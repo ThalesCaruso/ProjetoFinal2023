@@ -7,9 +7,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("blog.urls")),
-    path('login/', include('autenticacao.urls')),
+    path('contas/', include('autenticacao.urls')),
     path('contato/', include('contato.urls')),
     path('cursos/', include('cursos.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-    path('contas/', include('contas.urls')),
+    path('criar_conta/', include('contas.urls')),
+    path('accounts/', include('allauth.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
