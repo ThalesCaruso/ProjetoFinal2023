@@ -1,53 +1,19 @@
-<!DOCTYPE html>
+{% extends "blog_base.html" %}
 {% load static %}
-<html lang="pt-br">
-<head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
-          crossorigin="anonymous">
-
-    <link rel="stylesheet" href="{% static 'css/estilos.css'%}">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <title>Página Inicial</title>
-</head>
 
 
-<body>
+{% block carousel %} {% endblock %}
 
+{% block content %}
 
-<div class="container-fluid bg-dark mb-2">
-    <div class="row justify-content-center">
+<div class="container-fluid border-start border-end">
+    <hr class="my-5">
 
-        <div class="col-xl-8">
-            <header class="bg-dark my-2">
-
-
-                {% include 'fragments/navbar.html'%}
-
-
-            </header>
-        </div>
-
-    </div>
-</div>
-
-<main class="bg-light">
     <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-xl-8 border-start border-end">
+        <div class="flex-row d-flex my-2">
+            <h1>{{ post.titulo }}</h1>
 
-                <hr class ="my-5">
-
-                <div class="container-fluid">
-                    <div class="flex-row d-flex my-2">
-                        <h1>{{ post.titulo }}</h1>
-
-                        <span class="d-flex justify-content-center align-items-center ms-5">
+            <span class="d-flex justify-content-center align-items-center ms-5">
 
                         <a href="#" class="text-decoration-none text-dark">
                             <span class="ms-3"
@@ -60,45 +26,45 @@
                         </a>
 
                         <a href="#" class="text-decoration-none text-dark"><span class="ms-3"
-                                          data-bs-toggle="tooltip"
-                                          data-bs-placement="top"
-                                          title="Compartilhar no Facebook">
+                                                                                 data-bs-toggle="tooltip"
+                                                                                 data-bs-placement="top"
+                                                                                 title="Compartilhar no Facebook">
 
                             <i class="fa-brands fa-facebook fa-2xl"></i>
                             </span>
                         </a>
 
                         <a href="#" class="text-decoration-none text-dark"><span class="ms-3"
-                                          data-bs-toggle="tooltip"
-                                          data-bs-placement="top"
-                                          title="Compartilhar no Twitter">
+                                                                                 data-bs-toggle="tooltip"
+                                                                                 data-bs-placement="top"
+                                                                                 title="Compartilhar no Twitter">
 
                             <i class="fa-brands fa-twitter fa-2xl"></i>
                             </span>
                         </a>
 
                         <a href="#" class="text-decoration-none text-dark"><span class="ms-3"
-                                          data-bs-toggle="tooltip"
-                                          data-bs-placement="top"
-                                          title="Compartilhar link da página">
+                                                                                 data-bs-toggle="tooltip"
+                                                                                 data-bs-placement="top"
+                                                                                 title="Compartilhar link da página">
 
                             <i class="fa-solid fa-link fa-2xl"></i>
                             </span></a>
 
                         </span>
 
-                    </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex flex-row align-items-center">
+                <div class="rounded-circle border d-flex justify-content-center
+                            align-items-center bg-info avatar" style="width:100px; height:100px">
+                    <!-- INSERIR IMAGEM AQUI -->
                 </div>
 
-                <div class="row">
-                    <div class="col-12">
-                        <div class="d-flex flex-row align-items-center">
-                            <div class="rounded-circle border d-flex justify-content-center
-                            align-items-center bg-info avatar" style="width:100px; height:100px">
-                                <!-- INSERIR IMAGEM AQUI -->
-                            </div>
-
-                            <p class="mb-0">
+                <p class="mb-0">
                                    <span>
 
                                        <span class="mx-3 h5">
@@ -131,47 +97,42 @@
                                           {{post.subtitulo}}
                                        </span>
                                    </span>
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <hr class ="my-5">
-
-                <article class="fs-4 px-lg-5  mx-lg-2">
-                    {{post.conteudo|safe}}
-                </article>
-
-                <hr class ="my-5">
-
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="d-flex justify-content-md-start justify-content-sm-center">
-
-                                <div class="span me-3 btn">
-                                    <i class="fa-solid fa-heart fa-2xl"></i> Curtir
-                                </div>
-
-                                <div class="span me-3 btn">
-                                    <i class="fa-solid fa-comment fa-2xl"></i> Comentar
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </p>
 
             </div>
         </div>
     </div>
-</main>
-
-        {% include 'fragments/footer.html' %}
 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <hr class="my-5">
 
-</body>
-</html>
+    <article class="fs-4 px-lg-5  mx-lg-2">
+        {{post.conteudo|safe}}
+    </article>
+
+    <hr class="my-5">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-md-start justify-content-sm-center">
+
+                    <div class="span me-3 btn">
+                        <i class="fa-solid fa-heart fa-2xl"></i> Curtir
+                    </div>
+
+                    <div class="span me-3 btn">
+                        <i class="fa-solid fa-comment fa-2xl"></i> Comentar
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block footer %}
+    {% include 'fragments/footer.html' %}
+{% endblock %}
