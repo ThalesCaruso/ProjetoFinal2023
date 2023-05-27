@@ -59,44 +59,42 @@
     <div class="row">
         <div class="col-12">
             <div class="d-flex flex-row align-items-center">
-                <div class="rounded-circle border d-flex justify-content-center
-                            align-items-center bg-info avatar" style="width:100px; height:100px">
-                    <!-- INSERIR IMAGEM AQUI -->
+                <div class="rounded-circle d-flex justify-content-center
+                            align-items-center avatar">
+                    <img src="{{ post.autor.foto.url }}"
+                    style="height:85px; width:85px"
+                    class="rounded-circle">
                 </div>
 
                 <p class="mb-0">
-                                   <span>
+                   <span class="text-muted justify-content-center">
 
-                                       <span class="mx-3 h5">
-                                            {{post.autor}}
-                                       </span>
+                       <span class="mx-2 h5">
+                            {{post.autor}}
+                       </span>
 
-                                       <span>
-                                        <i class="fa-solid fa-clock"></i>
-                                           <span>
-                                               30Min
-                                           </span>
-                                       </span>
+                       <span>
+                        <i class="fa-solid fa-clock"></i>
+                           <span>
+                               {{ post.tempo_leitura }}
+                           </span>
+                       </span>
 
-                                       <br>
+                       <br>
 
-                                       <span class="mx-3">
-                                           <i class="fa-solid fa-tags"></i>
-                                       </span>
+                       <span class="mx-2">  <i class="fa-solid fa-tags"></i> </span>
 
-                                       <span>
-                                          <a href="#" class="text-decoration-none text-muted"> #Aventura </a>
-                                       </span>
+                       {% for tag in post.tag_set.all %}
+                      <span>
+                          <a href="#" class="text-decoration-none text-muted"> #{{ tag.nome }} </a>
+                      </span>
+                       {% endfor %}
+                       <br>
 
-                                       <span>
-                                          <a href="#" class="text-decoration-none text-muted"> #Nintendo </a>
-                                       </span>
-
-                                       <br>
-                                       <span class="mx-3">
-                                          {{post.subtitulo}}
-                                       </span>
-                                   </span>
+                       <span class="mx-2">
+                          {{post.subtitulo}}
+                       </span>
+                   </span>
                 </p>
 
             </div>
@@ -107,7 +105,10 @@
     <hr class="my-5">
 
     <article class="fs-4 px-lg-5  mx-lg-2">
-        {{post.conteudo|safe}}
+        {% for topico in post.topico_set.all %}
+        {{topico.conteudo|safe}}
+            <br />
+        {% endfor %}
     </article>
 
     <hr class="my-5">

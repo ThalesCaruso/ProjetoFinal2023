@@ -3,7 +3,10 @@
     <a href="{% url 'post_detail' post.id %}">
         <img src="{{ post.imagem_capa.url }}"
              class="card-img-top"
-             alt="imagem card teste"></a>
+             alt="imagem do card"
+            style="height:350px">
+
+    </a>
 
 
     <div class="card-body pb-4">
@@ -13,7 +16,7 @@
             </h4></a>
 
         <p class="card-text">
-            {{ post.resumo|safe}}
+            {{ post.topico_set.first.conteudo|slice:":500"|safe }}...
         </p>
 
         <p class="card-text">
