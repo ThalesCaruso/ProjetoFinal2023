@@ -16,7 +16,7 @@ SECRET_KEY = '+#b1$1x)7pt)jn465hgm@tv(ed+4xeahn8=mw^h4l$j0$e+qq3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -80,8 +80,8 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-#WSGI_APPLICATION = 'core.wsgi.application'
-WSGI_APPLICATION = 'vercel_app.wsgi.app'
+WSGI_APPLICATION = 'core.wsgi.application'
+
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
