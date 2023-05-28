@@ -16,7 +16,7 @@ SECRET_KEY = '+#b1$1x)7pt)jn465hgm@tv(ed+4xeahn8=mw^h4l$j0$e+qq3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -137,15 +137,16 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, STATIC_URL)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'staticfiles/'),
+]
 
 MEDIA_URL = 'images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'staticfiles/'),
-]
+
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'login'
