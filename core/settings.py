@@ -108,7 +108,7 @@ DATABASES = {
         "HOST": "containers-us-west-30.railway.app",
        "PORT": "7641",
         'OPTIONS': {
-           'options': '-c search_path=blog_db'
+           # 'options': '-c search_path=railway'
                 },
     }
 }
