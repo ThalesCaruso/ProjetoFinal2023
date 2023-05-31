@@ -86,33 +86,33 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#    "default": {
-#        "ENGINE": "django.db.backends.postgresql",
-#        "NAME": "blog",
-#         "USER": "postgres",
-#         "PASSWORD": "1234",
-#         "HOST": "127.0.0.1",
-#        "PORT": "5432",
-#         'OPTIONS': {
-#            'options': '-c search_path=blog_db'
-#                 },
-#     }
-# }
-
 DATABASES = {
    "default": {
        "ENGINE": "django.db.backends.postgresql",
-       "NAME": "railway",
+       "NAME": "blog",
         "USER": "postgres",
-        "PASSWORD": "yWnTa8uvSwZlgMVa809o",
-        "HOST": "containers-us-west-22.railway.app",
-       "PORT": "7232",
+        "PASSWORD": "1234",
+        "HOST": "127.0.0.1",
+       "PORT": "5432",
         'OPTIONS': {
            'options': '-c search_path=blog_db'
                 },
     }
 }
+
+# DATABASES = {
+#    "default": {
+#        "ENGINE": "django.db.backends.postgresql",
+#        "NAME": "railway",
+#         "USER": "postgres",
+#         "PASSWORD": "yWnTa8uvSwZlgMVa809o",
+#         "HOST": "containers-us-west-22.railway.app",
+#        "PORT": "7232",
+#         'OPTIONS': {
+#            'options': '-c search_path=blog_db'
+#                 },
+#     }
+# }
 
 
 
