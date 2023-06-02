@@ -12,6 +12,4 @@ html, body {
 img, svg {
     vertical-align: middle;
     max-width: 100%;
-    display: block;
-    margin: auto;
 }
