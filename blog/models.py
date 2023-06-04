@@ -11,7 +11,7 @@ class Post(models.Model):
     subtitulo = models.CharField(max_length=255)
     imagem_capa = models.ImageField(null=True, blank=True, upload_to='static/blog/')
     data_publicacao = models.DateField()
-    tempo_leitura = models.CharField(max_length=2, default=30)
+    tempo_leitura = models.CharField(max_length=15, default=30)
 
     def __str__(self):
         return self.titulo
