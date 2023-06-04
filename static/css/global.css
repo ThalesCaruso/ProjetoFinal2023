@@ -8,3 +8,8 @@ body {
     flex: 0 0 50px;
     margin-top: auto;
 }
+
+img, svg {
+    vertical-align: middle;
+    max-width: 100%;
+}
