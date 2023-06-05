@@ -45,6 +45,7 @@ def enviar_email_com_template(contato):
     html_content = render_to_string(
         'email_templates/confirmacao_mensagem.html',
             {'nome': contato.cleaned_data['nome'],
+            'mensagem': contato.cleaned_data['mensagem'],
             'assunto': contato.cleaned_data['assunto']})
 
 
