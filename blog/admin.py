@@ -26,8 +26,8 @@ class PostAdmin(admin.ModelAdmin):
     inlines = [
         TopicoInline,
         TagInLine,
-        AssuntoInLine,
-        SituacaoInLine,
+        # AssuntoInLine,
+        # SituacaoInLine,
     ]
 
     class Meta:
