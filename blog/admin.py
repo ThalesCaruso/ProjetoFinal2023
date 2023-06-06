@@ -46,5 +46,5 @@ admin.site.register(Tag)
 # admin.site.register(Comentario)
 # admin.site.register(Situacao, SituacaoAdmin)
 # admin.site.register(PostSituacao)
-admin.site.register(Assunto)
+# admin.site.register(Assunto)
 
