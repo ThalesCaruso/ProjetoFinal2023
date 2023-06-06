@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
     <div class="col-xl-6">
-        {% for post in posts %}
+        {% for post in posts|slice:"1:10" %}
             {% include "fragments/card_base.html" with post=post %}
             <div class="my-3"></div>
     {% endfor %}
