@@ -43,8 +43,8 @@ class SituacaoAdmin(admin.ModelAdmin):
 admin.site.register(Post, PostAdmin)
 admin.site.register(Topico)
 admin.site.register(Tag)
-admin.site.register(Comentario)
-admin.site.register(Situacao, SituacaoAdmin)
-admin.site.register(PostSituacao)
+# admin.site.register(Comentario)
+# admin.site.register(Situacao, SituacaoAdmin)
+# admin.site.register(PostSituacao)
 admin.site.register(Assunto)
 
