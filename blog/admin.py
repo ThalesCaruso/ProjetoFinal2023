@@ -13,13 +13,13 @@ class TagInLine(admin.TabularInline):
 
 
 
-class AssuntoInLine(admin.TabularInline):
-    model = Assunto.posts.through
-    extra = 1
+# class AssuntoInLine(admin.TabularInline):
+#     model = Assunto.posts.through
+#     extra = 1
 
-class SituacaoInLine(admin.TabularInline):
-    model = PostSituacao
-    extra = 1
+# class SituacaoInLine(admin.TabularInline):
+#     model = PostSituacao
+#     extra = 1
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -35,10 +35,10 @@ class PostAdmin(admin.ModelAdmin):
 
 
 
-class SituacaoAdmin(admin.ModelAdmin):
-    inlines = [
-        SituacaoInLine
-            ]
+# class SituacaoAdmin(admin.ModelAdmin):
+#     inlines = [
+#         SituacaoInLine
+#             ]
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Topico)
